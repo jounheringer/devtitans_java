@@ -3,28 +3,24 @@ import java.util.Scanner;
 public class AreaPoligono {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        float[][] auxMap = new float[6][2];
-        int count = 0;
+        float[][] auxMap = new float[7][2];
+        int count;
         float sum = 0f;
 
-        while (true) { 
-            String x = scanner.next().replace(',', '.');
-            float newX = (float) Float.valueOf(x);
+        for (count = 0; count <= 5; count++) { 
+            if (!scanner.hasNext()) break;
+            float newX = scanner.nextFloat();
 
-            String y = scanner.next().replace(',', '.');
-            if (y.equals("-1")) break;
-            float newY = (float) Float.valueOf(y);
-
+            float newY = scanner.nextFloat();
+            
             auxMap[count][0] = newX;
             auxMap[count][1] = newY;
-            
-            count++;
         }
 
-        auxMap[count+1][0] = auxMap[0][0];
-        auxMap[count+1][1] = auxMap[0][1];
+        auxMap[count][0] = auxMap[0][0];
+        auxMap[count][1] = auxMap[0][1];
 
-        for (int i =0; i< 5; i++) {
+        for (int i =0; i<= 5; i++) {
             sum += (auxMap[i+1][0] + auxMap[i][0]) * (auxMap[i+1][1] - auxMap[i][1]);
         }
 
