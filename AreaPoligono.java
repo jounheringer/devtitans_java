@@ -6,18 +6,16 @@ public class AreaPoligono {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
 
-        int capacidadeX = 10;
-        double[] x = new double[capacidadeX];
+        double[] x = new double[7];
         int n = 0;
+        double[] y = new double[7];
+        int countY = 0;
 
         while (scanner.hasNextDouble()) {
             double val = scanner.nextDouble();
             if (val == -1.0) break;
             x[n++] = val;
         }
-
-        double[] y = new double[n];
-        int countY = 0;
 
         while (scanner.hasNextDouble()) {
             double val = scanner.nextDouble();
